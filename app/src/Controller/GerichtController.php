@@ -71,4 +71,10 @@ class GerichtController extends AbstractController
             'gericht' => $gericht
         ]);
     }
+
+    #[Route('/preis/{id}', name: 'preis')] 
+    public function preis($id, GerichtRepository $gerichtRepository){
+        $gericht = $gerichtRepository->find5euro($id);
+        dump($gericht);
+    }
 }
